@@ -1,0 +1,297 @@
+{% load static %}
+<!doctype html>
+<html class="no-js" lang="en">
+
+
+<head>
+    <meta charset="utf-8">
+
+    <title>My Ads | Tit-Tat</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="shortcut icon" href="{% static 'images/logo.png' %}" type="image/png">
+
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/nice-select.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/slick.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/ion.rangeSlider.min.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/fontawesome.min.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/default.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <link href="https://netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+</head>
+
+<body class="gray-bg">
+
+    <div class="preloader">
+        <div class="loader">
+            <div class="ytp-spinner">
+                <div class="ytp-spinner-container">
+                    <div class="ytp-spinner-rotator">
+                        <div class="ytp-spinner-left">
+                            <div class="ytp-spinner-circle"></div>
+                        </div>
+                        <div class="ytp-spinner-right">
+                            <div class="ytp-spinner-circle"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <header class="header_area">
+        <div class="header_navbar">
+            <div class="container">
+                <nav class="navbar navbar-expand-lg">
+
+                    <a class="navbar-brand" href="adver">
+                        <img src="{% static 'images/logo.png' %}" alt="logo">
+                    </a>
+
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="toggler-icon"></span>
+                        <span class="toggler-icon"></span>
+                        <span class="toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
+                        <ul class="navbar-nav m-auto">
+                            <li>
+                                <a class="active" href="#">Home <span class="line"></span></a>
+                            </li>
+
+
+
+                            <li><a href="contact">Contact Us <span class="line"></span></a></li>
+
+
+                        </ul>
+                    </div>
+                    <div class="navbar_btn">
+                        <ul>
+                            <li>
+                                <div class="dropdown">
+                                    {% if request.session.name %}
+                                    <a href="signin.html" class="dropdown-toggle" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Hello, {{request.session.name}}</a> {% endif %}
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                        <ul>
+
+                                            <li><a href="profile"><i class="fas fa-user-alt"></i>Profile
+                                                    </a></li>
+                                            <li><a href="myads"><i class="fal fa-layer-group"></i> My Advertisements</a></li>
+                                            <li><a href="{% url 'log' %}"><i class="fal fa-sign-out"></i> Sign Out</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+
+    </header>
+    <section class="blog_area pt-70 pb-10 ">
+
+    </section>
+    <section class="blog_area pt-70 pb-10 ">
+
+    </section>
+
+
+    <div class="container bootdey">
+        <div class="row invoice row-printable">
+            <div class="col-md-10">
+                <!-- col-lg-12 start here -->
+                <div class="panel panel-default plain" id="invoice">
+                    <!-- Start .panel -->
+                    <h1 class="text-center">ADVERTISEMENT BILL</h1>
+                    <div class="panel-body p30">
+                        <div class="row">
+                            <!-- Start .row -->
+                            <div class="col-lg-6">
+                                <!-- col-lg-6 start here -->
+                                <div class="invoice-logo" style="position:sticky;"><img width="100" src="{{request.session.url}}" alt="Invoice logo"></div>
+                            </div>
+                            <div class="col-md-1" style="position:relative; left: -100px;">
+                                <!-- col-lg-6 start here -->
+                                <div class="invoice-logo" style="position:sticky; left: -100px; width: 300px;"><img src="{% static 'images/logo.png' %}" alt=" logo"></div>
+                            </div>
+
+                            <!-- col-lg-6 end here -->
+                            <div class="col-lg-5">
+                                <!-- col-lg-6 start here -->
+                                <div class="invoice-from">
+                                    <ul class="list-unstyled text-right">
+                                        <li>Tit-Tat Office</li>
+                                        <li>Antony's Block Research Square AJCE</li>
+                                        <li>Phone :+91 6282395195 <br>+91 7510561768 </li>
+                                        <li>Email ID: tittatad22@gmail.com</li>
+                                        <li>Website : tittat.pythonanywhere.com</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- col-lg-6 end here -->
+                            <div class="col-lg-12">
+                                <!-- col-lg-12 start here -->
+                                <div class="invoice-details mt25">
+                                    <div class="well">
+                                        <ul class="list-unstyled mb0">
+                                            <li><strong>Advertisement ID :</strong> {{adid}}</li>
+                                            <li><strong>Advertisement For :</strong> {{ads.com_name}}</li>
+                                            <li><strong>Advertisement Date :</strong> {{ads.dats}}</li>
+                                            <li><strong>Advertisement Validity :</strong>{{ads.from}} to {{ads.to}} </li>
+                                            <li><strong>Advertisement Status :</strong> <span class="label label-danger">{{ads.status}}</span></li>
+
+
+
+                                        </ul>
+                                    </div>
+
+                                </div>
+                                <div class="invoice-to mt25">
+                                    <ul class="list-unstyled">
+                                        <li><strong>Advertised By</strong></li>
+                                        <li>{{request.session.first}} {{request.session.last}}</li>
+                                        <li>{{request.session.house}} {{request.session.street}} </li>
+                                        <li>{{request.session.district}} - {{request.session.pincode}} {{request.session.state}}</li>
+                                        <li>Phone : {{request.session.phone}}</li><br>
+                                    </ul>
+
+                                </div>
+                                <div class="invoice-items">
+                                    <div class="table-responsive" style="overflow: hidden; outline: none;" tabindex="0">
+                                        <table class="table table-bordered">
+                                            <thead>
+                                                <tr>
+                                                    <th class="per70 text-center">Plan</th>
+                                                    <th class="per5 text-center">Amount</th>
+                                                    <th class="per25 text-center">Total</th>
+                                                </tr>
+                                            </thead>
+
+                                            <tbody>
+                                                <tr>
+                                                    <td>Advertise for {{ads.plan}}</td>
+                                                    <td class="text-center">{{ads.amount}}</td>
+                                                    <td class="text-center">Rs.{{ads.amount}}/-</td>
+                                                </tr>
+
+
+                                            </tbody>
+                                            <tfoot>
+                                                <tr>
+                                                    <th colspan="2" class="text-right">Sub Total:</th>
+                                                    <th class="text-center">RS.{{ads.amount}}/-</th>
+                                                </tr>
+
+                                                <tr>
+                                                    <th colspan="2" class="text-right">Total:</th>
+                                                    <th class="text-center">Rs.{{ads.amount}}/-</th>
+                                                </tr>
+                                            </tfoot>
+
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="invoice-footer mt25">
+                                    <h5 class="text-center">Thank You For Advertising with as Have a Nice Day</h5>
+
+                                    <p class="text-center">Bill Generated on {{ads.dats}} <button onclick="generatePDF()">Print</button></p>
+
+                                </div>
+                            </div>
+                            <!-- col-lg-12 end here -->
+                        </div>
+                        <!-- End .row -->
+                    </div>
+                </div>
+                <!-- End .panel -->
+            </div>
+            <!-- col-lg-12 end here -->
+        </div>
+    </div>
+
+    <style type="text/css">
+        body {
+            margin-top: 10px;
+            background: #eee;
+        }
+    </style>
+
+    <script type="text/javascript">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.js" integrity="sha512-dBB2PGgYedA6vzize7rsf//Q6iuUuMPvXCDybHtZP3hQXCPCD/YVJXK3QYZ2v0p7YCfVurqr8IdcSuj4CCKnGg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- <script src="html2pdf.bundle.min.js"></script> -->
+    <script>
+        function generatePDF() {
+
+            const element = document.getElementById('invoice');
+            a = html2pdf().from(element).save();
+            return false;
+        }
+    </script>
+
+
+
+    <footer class="footer_area">
+
+        <div class="footer_copyright pt-15 pb-30">
+            <div class="container">
+                <div class="footer_copyright_wrapper text-center d-sm-flex justify-content-between align-items-center">
+                    <div class="copyright mt-15">
+                        <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                            &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspDesigned and Developed by VivinVAbraham</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <a href="#" class="back-to-top"><i class="fa fa-angle-up"></i></a>
+
+
+
+
+
+
+    <script src="{% static 'js/vendor/jquery-1.12.4.min.js' %}"></script>
+    <script src="{% static 'js/vendor/modernizr-3.7.1.min.js' %}"></script>
+
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+
+    <script src="{% static 'js/slick.min.js' %}"></script>
+
+    <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+
+    <script src="{% static 'js/jquery.nice-select.min.js' %}"></script>
+
+    <script src="{% static 'js/waypoints.min.js' %}"></script>
+    <script src="{% static 'js/jquery.counterup.min.js' %}"></script>
+
+    <script src="{% static 'js/ion.rangeSlider.min.js' %}"></script>
+
+    <script src="{% static 'js/ajax-contact.js' %}"></script>
+
+    <script src="{% static 'js/main.js' %}"></script>
+</body>
+
+
+
+</html>
